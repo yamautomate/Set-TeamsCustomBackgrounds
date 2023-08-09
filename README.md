@@ -1,5 +1,6 @@
 # Set-TeamsCustomBackgrounds
 This Script downloads a set of custom Backgrounds from an Azure Blob and stores it in the appropriate folder in Teams, so that you can centrally distribute corporate backgrounds to your users.
+It also logs events to the Application Event Log using this source "Intune-PoSh-SPE-WIN10-Baseline-Devices-Teams-CustomBackgrounds". This makes it easy for you to troubleshoot and trace what the script does when distributing it via Intune for example.
 
 It supports the "classic" Teams client as well as the "New" (beta) client.
 
