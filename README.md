@@ -37,11 +37,13 @@ In %localAppData%\Packages\MSTeams_8wekyb3d8bbwe\LocalCache\Microsoft\MSTeams\Ba
 
 # How-To run the Script
 Make sure you define the Variables below according to your situation:
-'''powershell
+
+
+```powershell
 $StorageAccountName = "SAC-CustomTeamsBG"
 $ContainerName = "custombgs"
 $SASToken = "sp=.........."
-'''
+```
 
 Then you can run the script and verify its working. If it does, simply create an Intune Script (64bit mode) and distribute that to your users.
 
