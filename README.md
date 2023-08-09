@@ -5,6 +5,10 @@ It also logs events to the Application Event Log using this source "Intune-PoSh-
 
 It supports the "classic" Teams client as well as the "New" (beta) client.
 
+# Solution Overview
+The Script is being distributed via Intune, so that it runs upon every LogIn/Reboot of a users machine. It checks if the files in the Azure Blob exist in the needed Teams Folder (for old and new). 
+If the needed picture does not exist, it downloads it to the according folder.
+
 ## Requierments
 - You have an Azure Storage Account with a Blob
 - You use a SAS that permits the following operations on the container level:
@@ -31,9 +35,15 @@ In %localAppData%\Packages\MSTeams_8wekyb3d8bbwe\LocalCache\Microsoft\MSTeams\Ba
 - 0b19f8d7-66d7-8856-ba5a-aaa04a3d309d.jpeg
 - 0b19f8d7-66d7-8856-ba5a-aaa04a3d309d_thumb.jpeg
 
-# Solution Overview
-The Script is being distributed via Intune, so that it runs upon every LogIn/Reboot of a users machine. It checks if the files in the Azure Blob exist in the needed Teams Folder (for old and new). 
-If the needed picture does not exist, it downloads it to the according folder.
+# How-To run the Script
+Make sure you define the Variables below according to your situation:
+'''powershell
+$StorageAccountName = "SAC-CustomTeamsBG"
+$ContainerName = "custombgs"
+$SASToken = "sp=.........."
+'''
+
+Then you can run the script and verify its working. If it does, simply create an Intune Script (64bit mode) and distribute that to your users.
 
 # Contribution
 If you see something worth changing/adding, feel free to open a PR :)
