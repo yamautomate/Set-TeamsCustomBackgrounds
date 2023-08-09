@@ -4,8 +4,15 @@ This Script downloads a set of custom Backgrounds from an Azure Blob and stores 
 It supports the "classic" Teams client as well as the "New" (beta) client.
 
 ## Requierments
+- You have an Azure Blob with a SAS that permits the following operations on the container level:
+   - List
+   - Read
 - The files in the Blob have been added manually to "classic" Teams beforehand. You then grab them from the
 %AppData%\Microsoft\Teams\Backgrounds\Uploads\ and upload these Files to the Blob (so that it creates the Thumbnail)
+
+Example contents of Blob:
+- 01_generic.jpg
+- 01_generic_thumb.jpg
 
 
 # Solution Overview
