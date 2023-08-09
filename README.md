@@ -12,4 +12,4 @@ The Script is being distributed via Intune, so that it runs upon every LogIn/Reb
 If the needed picture does not exist, it downloads it to the according folder.
 
 # Contribution
-If you see something worth changging/adding, feel free to open a PR :)
+If you see something worth changing/adding, feel free to open a PR :)
