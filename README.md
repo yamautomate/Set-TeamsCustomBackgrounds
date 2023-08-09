@@ -36,12 +36,3 @@ If the needed picture does not exist, it downloads it to the according folder.
 # Contribution
 If you see something worth changing/adding, feel free to open a PR :)
 
-
-
-
-Yes you also need to have a Thumbnail for each background picture. That Thumbnail needs to match the GUID of the background picture:
-
-0b19f8d7-66d7-8856-ba5a-aaa04a3d309d.jpeg
-0b19f8d7-66d7-8856-ba5a-aaa04a3d309d_thumb.jpeg
-In my approach, I use an Azure Blob to store the pictures with their Thumbail (I add them manually to "classic" Teams beforehand, grab them from the "Uploads" Folder and upload them to the Blob).
-Then my PowerShell Script (distributed via Intune) downloads all Files from that Blob. If NewTeamsIsPresent on the System where the Script runs, it downloads the same file as for "classic" Teams but creates a GUID from the Filename. 
