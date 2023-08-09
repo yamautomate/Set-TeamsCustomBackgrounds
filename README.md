@@ -4,7 +4,8 @@ This Script downloads a set of custom Backgrounds from an Azure Blob and stores 
 It supports the "classic" Teams client as well as the "New" (beta) client.
 
 ## Requierments
-- You have an Azure Blob with a SAS that permits the following operations on the container level:
+- You have an Azure Storage Account with a Blob
+- You use a SAS that permits the following operations on the container level:
    - List
    - Read
 - The files in the Blob have been added manually to "classic" Teams beforehand. You then grab them from the
@@ -14,6 +15,19 @@ Example contents of Blob:
 - 01_generic.jpg
 - 01_generic_thumb.jpg
 
+
+# "Classic" Teams vs. "New" Teams client
+There are different requierments for these two clients so that the Teams Background Pictures show up in Teams.
+
+## Classic client
+In %AppData%\Microsoft\Teams\Backgrounds\Uploads\ a combination of the background picture and its thumbnail to be shown in the selection:
+   - 01_generic.jpg
+   - 01_generic_thumb.jpg
+
+## New client
+In %localAppData%\Packages\MSTeams_8wekyb3d8bbwe\LocalCache\Microsoft\MSTeams\Backgrounds\Uploads a combination of the background picture and its thumbnail to be shown in the selection:
+- 0b19f8d7-66d7-8856-ba5a-aaa04a3d309d.jpeg
+- 0b19f8d7-66d7-8856-ba5a-aaa04a3d309d_thumb.jpeg
 
 # Solution Overview
 The Script is being distributed via Intune, so that it runs upon every LogIn/Reboot of a users machine. It checks if the files in the Azure Blob exist in the needed Teams Folder (for old and new). 
